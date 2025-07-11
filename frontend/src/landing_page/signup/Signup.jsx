@@ -14,7 +14,8 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:3002/signup", {
+            const res = await fetch('https://varsity-lodm.onrender.com/signup', {
+
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form)
