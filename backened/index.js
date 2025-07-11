@@ -33,6 +33,16 @@ const razorpay = new Razorpay({
     key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+const allowedOrigins = [
+  "https://frontend-09yj.onrender.com",
+  "https://dashboard-m8d9.onrender.com"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.get("/", (req, res) => {
   res.send("Varsity backend is running!");
 });
