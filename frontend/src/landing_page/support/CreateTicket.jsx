@@ -20,11 +20,12 @@ function CreateTicket() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3003/send-email", {
+      const res = await fetch(`${import.meta.env.VITE_SUPPORT_API}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
 
       const data = await res.json();
       if (res.ok) {
