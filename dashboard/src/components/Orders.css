@@ -1,0 +1,177 @@
+/* .orders-page {
+    padding: 20px;
+}
+
+.order-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.order-table th {
+    background-color: #f4f4f4;
+}
+
+.buy {
+    color: green;
+    font-weight: bold;
+}
+
+.sell {
+    color: red;
+    font-weight: bold;
+}
+
+.no-orders {
+    padding: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.not-logged-in-card {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+.not-logged-in-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.not-logged-in-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.not-logged-in-card button {
+    padding: 10px 20px;
+    background-color: #387ed1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.not-logged-in-card button:hover {
+    background-color: #2c6ab9;
+} */
+ .orders-modern-page {
+    padding: 40px;
+    background: #f9fbff;
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.modern-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.modern-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 60px auto;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.modern-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.modern-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modern-card button {
+    background-color: #387ed1;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modern-card button:hover {
+    background-color: #2c6ab9;
+}
+
+.modern-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.modern-table th,
+.modern-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.modern-table th {
+    background-color: #f1f5f9;
+    color: #333;
+    font-weight: 600;
+}
+
+.modern-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.modern-buy {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.modern-sell {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
