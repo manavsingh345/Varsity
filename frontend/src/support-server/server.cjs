@@ -17,9 +17,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Single root route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'portfolio.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'portfolio.html'));
+// });
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
