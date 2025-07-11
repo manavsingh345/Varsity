@@ -97,7 +97,7 @@ const Orders = () => {
     }
 
     axios
-      .get(`http://localhost:3002/orders/${user._id}`)
+      .get(`https://varsity-lodm.onrender.com/orders/${user._id}`)
       .then((res) => {
         setOrders(res.data.reverse());
       })

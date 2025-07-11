@@ -9,7 +9,7 @@ const Holdings = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios.get("http://localhost:3002/myHoldings", {
+    axios.get("https://varsity-lodm.onrender.com/myHoldings", {
       headers: { Authorization: token },
     }).then((res) => {
       // console.log(res.data);

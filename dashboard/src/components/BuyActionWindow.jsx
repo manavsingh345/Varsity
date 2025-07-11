@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
   useEffect(() => {
   // fetch current price from backend
   axios
-    .get(`http://localhost:3002/price/${uid}`)  // you'll add this backend route
+    .get(`https://varsity-lodm.onrender.com/${uid}`)  // you'll add this backend route
     .then((res) => setStockPrice(res.data.price))
     .catch((err) => {
       console.error("Error fetching price:", err);
@@ -27,7 +27,7 @@ const BuyActionWindow = ({ uid }) => {
 
   axios
     .post(
-      "http://localhost:3002/newOrder",
+      "https://varsity-lodm.onrender.com/newOrder",
       {
         name: uid,
         qty: stockQuantity,

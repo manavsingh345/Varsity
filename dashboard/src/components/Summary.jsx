@@ -13,13 +13,13 @@ const Summary = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:3002/myHoldings", {
+      .get("https://varsity-lodm.onrender.com/myHoldings", {
         headers: { Authorization: token },
       })
       .then((res) => setHoldings(res.data));
 
     axios
-      .get("http://localhost:3002/user/summary", {
+      .get("https://varsity-lodm.onrender.com/user/summary", {
         headers: { Authorization: token },
       })
       .then((res) => setUserData(res.data));

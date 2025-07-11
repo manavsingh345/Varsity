@@ -77,7 +77,7 @@ const Menu = () => {
          <li>
             <p
               className={menuClass}
-              onClick={() => window.location.href = "http://localhost:5173"}
+              onClick={() => window.location.href = "https://frontend-09yj.onrender.com"}
             
             >
               Zerodha
