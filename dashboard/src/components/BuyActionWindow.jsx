@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
   useEffect(() => {
   // fetch current price from backend
   axios
-    .get(`${import.meta.env.VITE_BACKEND_URL}/${uid}`)  // you'll add this backend route
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/price/${uid}`)  // you'll add this backend route
     .then((res) => setStockPrice(res.data.price))
     .catch((err) => {
       console.error("Error fetching price:", err);
