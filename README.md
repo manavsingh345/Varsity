@@ -2,7 +2,7 @@
 
 A modern and full-featured **Zerodha Clone** built with the MERN stack + Razorpay integration. This project replicates a complete online stock trading experience, including user authentication, dashboard analytics, live stock prices, order management, wallet system, and a support ticket system.
 
-🚀 **Live Frontend:** [https://frontend-09yj.onrender.com](https://frontend-09yj.onrender.com)  
+🚀 **Live Website:** [https://frontend-09yj.onrender.com](https://frontend-09yj.onrender.com)  
 🔗 **Dashboard:** [https://dashboard-m8d9.onrender.com](https://dashboard-m8d9.onrender.com)  
 🔧 **Backend API:** [https://varsity-lodm.onrender.com](https://varsity-lodm.onrender.com)  
 
