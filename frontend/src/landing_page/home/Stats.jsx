@@ -24,7 +24,7 @@ function Stats() {
                         </Link>
 
                         <a
-                            href="https://dashboard-m8d9.onrender.com/"
+                            href={import.meta.env.VITE_DASHBOARD_URL}
                             style={{ textDecoration: 'none' }}
                         >
                             Try Kite <i className="fa-solid fa-arrow-right-long"></i>

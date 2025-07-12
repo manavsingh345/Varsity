@@ -14,7 +14,7 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('https://backened-9xgc.onrender.com/signup', {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/signup`, {
 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

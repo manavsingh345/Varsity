@@ -16,7 +16,7 @@ function LeftSection({
       localStorage.getItem("token");
 
     if (isLoggedIn) {
-      window.location.href = "https://dashboard-m8d9.onrender.com/";
+      window.location.href = import.meta.env.VITE_DASHBOARD_URL;
     } else {
       //alert("Please login before accessing Kite.");
       setShowPopup(true);

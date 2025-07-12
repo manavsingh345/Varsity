@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function Login() {
     const [form, setForm] = useState({ email: '', password: '' });
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ function Login() {
         setError(null);
 
         try {
-            const res = await fetch('https://backened-9xgc.onrender.com/login', {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
