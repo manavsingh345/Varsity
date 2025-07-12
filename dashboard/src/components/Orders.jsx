@@ -15,7 +15,7 @@ const Orders = () => {
     }
 
     axios
-      .get(`https://backened-9xgc.onrender.com/orders/${user._id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/orders/${user._id}`)
       .then((res) => {
         setOrders(res.data.reverse());
       })

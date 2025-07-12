@@ -77,9 +77,9 @@ const Menu = () => {
          <li>
             <p
               className={menuClass}
-              onClick={() => window.location.href = "https://frontend-09yj.onrender.com"}
-            
+              onClick={() => window.location.href = import.meta.env.VITE_FRONTEND_URL}
             >
+
               Zerodha
             </p>
         </li>

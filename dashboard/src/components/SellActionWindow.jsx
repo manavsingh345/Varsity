@@ -14,7 +14,7 @@ const SellActionWindow = ({ uid }) => {
     useEffect(() => {
       // fetch current price from backend
       axios
-        .get(`https://backened-9xgc.onrender.com/price/${uid}`)  // you'll add this backend route
+        .get(`${import.meta.env.VITE_BACKEND_URL}/price/${uid}`)  // you'll add this backend route
         .then((res) => setStockPrice(res.data.price))
         .catch((err) => {
           console.error("Error fetching price:", err);
@@ -26,8 +26,8 @@ const SellActionWindow = ({ uid }) => {
         const token = localStorage.getItem("token");
 
         axios
-            .post(
-                "https://backened-9xgc.onrender.com/newOrder",
+            .post(    
+                `${import.meta.env.VITE_BACKEND_URL}/newOrder`,
                 {
                     name: uid,
                     qty: Number(stockQuantity),
