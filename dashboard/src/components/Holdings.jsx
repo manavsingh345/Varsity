@@ -79,37 +79,43 @@ const Holdings = () => {
             <th>Day chg.</th>
           </tr>
 
-          {allHoldings.map((stock, index) => {
-            const curValue = stock.price * stock.qty;
-            const investment = stock.avg * stock.qty;
-            const isProfit = curValue - investment >= 0.0;
-            const profClass = isProfit ? "profit" : "loss";
+          // inside map callback
+            {allHoldings.map((stock, index) => {
+              const curValue = stock.price * stock.qty;
+              const investment = stock.avg * stock.qty;
 
-            // You can replace this with stock.prevClose if you have it in DB
-            const prevClose = stock.avg; // fallback
-            const netChangePercent = ((stock.price - stock.avg) / stock.avg) * 100;
-            const dayChangePercent = ((stock.price - prevClose) / prevClose) * 100;
-            const dayClass = dayChangePercent < 0 ? "loss" : "profit";
+              const isProfit = curValue - investment >= 0.0;
+              const profClass = isProfit ? "profit" : "loss";
 
-            return (
-              <tr key={index}>
-                <td>{stock.name}</td>
-                <td>{stock.qty}</td>
-                <td>{stock.avg.toFixed(2)}</td>
-                <td>{stock.price.toFixed(2)}</td>
-                <td>{curValue.toFixed(2)}</td>
-                <td className={profClass}>
-                  {(curValue - investment).toFixed(2)}
-                </td>
-                <td className={profClass}>
-                  {netChangePercent.toFixed(2)}%
-                </td>
-                <td className={dayClass}>
-                  {dayChangePercent.toFixed(2)}%
-                </td>
-              </tr>
-            );
-          })}
+              const safeAvg = stock.avg > 0 ? stock.avg : 1;
+              const netChangePercent = ((stock.price - safeAvg) / safeAvg) * 100;
+
+              // fallback to avg if prevClose is missing (or use your DB’s previousClose if available)
+              const prevClose = stock.avg || stock.price;
+              const safePrev = prevClose > 0 ? prevClose : 1;
+              const dayChangePercent = ((stock.price - safePrev) / safePrev) * 100;
+              const dayClass = dayChangePercent < 0 ? "loss" : "profit";
+
+              return (
+                <tr key={index}>
+                  <td>{stock.name}</td>
+                  <td>{stock.qty}</td>
+                  <td>{stock.avg.toFixed(2)}</td>
+                  <td>{stock.price.toFixed(2)}</td>
+                  <td>{curValue.toFixed(2)}</td>
+                  <td className={profClass}>
+                    {(curValue - investment).toFixed(2)}
+                  </td>
+                  <td className={profClass}>
+                    {netChangePercent.toFixed(2)}%
+                  </td>
+                  <td className={dayClass}>
+                    {dayChangePercent.toFixed(2)}%
+                  </td>
+                </tr>
+              );
+        })}
+
 
         </table>
       </div>
