@@ -35,7 +35,7 @@ const razorpay = new Razorpay({
 
 const allowedOrigins = [
   "https://varsity-six.vercel.app",
-   "https://kite-gilt.vercel.app"
+  "https://kite-gilt.vercel.app"
 ];
 
 app.use(cors({
