@@ -4,12 +4,18 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
-
+const allowedOrigin = process.env.FRONTEND_URL || 'https://frontend-09yj.onrender.com';
 
 // Middleware
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || 'https://frontend-09yj.onrender.com/']
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
+// Optional, but good to include:
+app.options('*', cors());
 
 app.use(express.json());
 
