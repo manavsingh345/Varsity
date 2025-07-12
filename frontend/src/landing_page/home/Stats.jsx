@@ -24,7 +24,7 @@ function Stats() {
                         </Link>
 
                         <a
-                            href="http://localhost:5174"
+                            href="https://dashboard-m8d9.onrender.com/"
                             style={{ textDecoration: 'none' }}
                         >
                             Try Kite <i className="fa-solid fa-arrow-right-long"></i>

@@ -11,7 +11,7 @@ function Hero() {
       localStorage.getItem("token");
 
     if (isLoggedIn) {
-      window.location.href = "http://localhost:5174";
+      window.location.href = "https://dashboard-m8d9.onrender.com/";
     } else {
       setShowPopup(true);
     }
