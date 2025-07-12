@@ -17,7 +17,7 @@ function Funds() {
     const fetchBalance = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("https://varsity-lodm.onrender.com/wallet", {
+        const res = await axios.get("https://backened-9xgc.onrender.com/wallet", {
           headers: { Authorization: token },
         });
         setBalance(res.data.balance);
@@ -37,7 +37,7 @@ function Funds() {
     }
 
     try {
-      const { data: order } = await axios.post("https://varsity-lodm.onrender.com/create-order", {
+      const { data: order } = await axios.post("https://backened-9xgc.onrender.com/create-order", {
         amount,
       });
 
@@ -55,7 +55,7 @@ function Funds() {
 
           try {
             const token = localStorage.getItem("token");
-            await axios.post("https://varsity-lodm.onrender.com/add-funds", {
+            await axios.post("https://backened-9xgc.onrender.com/add-funds", {
               amount: Number(amount),
               paymentId: response.razorpay_payment_id,
             }, {

@@ -13,14 +13,14 @@ function Login() {
         setIsLoading(true);
 
         try {
-            const { data } = await axios.post("https://varsity-lodm.onrender.com/login", {
+            const { data } = await axios.post("https://backened-9xgc.onrender.com/login", {
                 email,
                 password,
             });
             
             localStorage.setItem("token", data.token);
 
-            const dashboardRes = await axios.get("https://varsity-lodm.onrender.com/dashboard", {
+            const dashboardRes = await axios.get("https://backened-9xgc.onrender.com/dashboard", {
                 headers: {
                     Authorization: data.token,
                 },

@@ -21,7 +21,7 @@ const Positions = () => {
       }
 
       axios
-        .get(`https://varsity-lodm.onrender.com/positions/${user._id}`)
+        .get(`https://backened-9xgc.onrender.com/positions/${user._id}`)
         .then((res) => setPositions(res.data))
         .catch((err) => {
           console.error("Error fetching positions:", err);
