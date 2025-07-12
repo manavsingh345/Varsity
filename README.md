@@ -4,7 +4,7 @@ A modern and full-featured **Zerodha Clone** built with the MERN stack + Razorpa
 
 🚀 **Live Website:** [https://frontend-09yj.onrender.com](https://frontend-09yj.onrender.com)  
 🔗 **Dashboard:** [https://dashboard-m8d9.onrender.com](https://dashboard-m8d9.onrender.com)  
-🔧 **Backend API:** [https://varsity-lodm.onrender.com](https://varsity-lodm.onrender.com)  
+🔧 **Backend API:** [https://backened-9xgc.onrender.com](https://backened-9xgc.onrender.com)  
 
 
 ---
