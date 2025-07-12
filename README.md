@@ -1,4 +1,4 @@
-# 📈 Zerodha Clone – Full Stack Stock Trading Platform
+# 📈Kite & Zerodha – Full Stack Stock Trading Platform
 
 A modern and full-featured **Zerodha Clone** built with the MERN stack + Razorpay integration. This project replicates a complete online stock trading experience, including user authentication, dashboard analytics, live stock prices, order management, wallet system, and a support ticket system.
 
