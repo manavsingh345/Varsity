@@ -4,7 +4,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
-const allowedOrigin = process.env.FRONTEND_URL || 'https://frontend-09yj.onrender.com';
+const allowedOrigin = process.env.FRONTEND_URL || 'https://varsity-six.vercel.app';
 
 // Middleware
 app.use(cors({
