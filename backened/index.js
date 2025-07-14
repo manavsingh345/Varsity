@@ -398,15 +398,22 @@ app.get("/myHoldings", authMiddleware, async (req, res) => {
                 });
 
                 const livePrice = response.data.c; // current price
+                const previousClose = response.data.pc;
+                const netChange = ((livePrice - stock.avg) / stock.avg) * 100;
+                const dayChange = ((livePrice - previousClose) / previousClose) * 100;
                 return {
                     ...stock._doc,
                     price: livePrice,
+                    net: `${netChange.toFixed(2)}%`,
+                    day: `${dayChange.toFixed(2)}%`,
                 };
             } catch (error) {
                 console.error(`Error fetching price for ${stock.name}:`, error.message);
                 return {
                     ...stock._doc,
                     price: stock.avg, // fallback
+                     net: "0.00%",
+                     day: "0.00%",
                 };
             }
         })
