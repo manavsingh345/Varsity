@@ -389,36 +389,49 @@ app.get("/myHoldings", authMiddleware, async (req, res) => {
 
 
     const updatedHoldings = await Promise.all(
-        holdings.map(async (stock) => {
-            try {
-                const response = await axios.get(`https://finnhub.io/api/v1/quote`, {
-                    params: {
-                        symbol: stock.name, // Example: AAPL, TSLA
-                        token: apiKey,
-                    },
-                });
+  holdings.map(async (stock) => {
+    const symbol = symbolMap[stock.name] || stock.name;
 
-                const livePrice = response.data.c; // current price
-                const previousClose = response.data.pc;
-                const netChange = ((livePrice - stock.avg) / stock.avg) * 100;
-                const dayChange = ((livePrice - previousClose) / previousClose) * 100;
-                return {
-                    ...stock._doc,
-                    price: livePrice,
-                    net: `${netChange.toFixed(2)}%`,
-                    day: `${dayChange.toFixed(2)}%`,
-                };
-            } catch (error) {
-                console.error(`Error fetching price for ${stock.name}:`, error.message);
-                return {
-                    ...stock._doc,
-                    price: stock.avg, // fallback
-                     net: "0.00%",
-                     day: "0.00%",
-                };
-            }
-        })
-    );
+    try {
+      const response = await axios.get(`https://finnhub.io/api/v1/quote`, {
+        params: {
+          symbol,
+          token: apiKey,
+        },
+      });
+
+      const livePrice = response.data.c; // current price
+      const previousClose = response.data.pc;
+
+      // 🔍 Log the full response from Finnhub
+      console.log(`📊 ${symbol} | Live: ${livePrice}, Prev Close: ${previousClose}, Avg: ${stock.avg}`);
+
+      // Check for unexpected values
+      if (!livePrice || !previousClose || !stock.avg) {
+        console.warn(`⚠️ Missing data for ${symbol}`);
+      }
+
+      const netChange = ((livePrice - stock.avg) / stock.avg) * 100;
+      const dayChange = ((livePrice - previousClose) / previousClose) * 100;
+
+      return {
+        ...stock._doc,
+        price: livePrice,
+        net: `${netChange.toFixed(2)}%`,
+        day: `${dayChange.toFixed(2)}%`,
+      };
+    } catch (error) {
+      console.error(`❌ Error fetching price for ${symbol}:`, error.message);
+      return {
+        ...stock._doc,
+        price: stock.avg,
+        net: "0.00%",
+        day: "0.00%",
+      };
+    }
+  })
+);
+
 
     res.json(updatedHoldings);
 });
