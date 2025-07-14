@@ -369,6 +369,7 @@ app.post("/add-funds", authMiddleware, async (req, res) => {
 const axios = require("axios");
 
 app.get("/myHoldings", authMiddleware, async (req, res) => {
+    console.log("My holding trigger");
     const userId = req.userId;
     const holdings = await HoldingsModel.find({ userId });
 
