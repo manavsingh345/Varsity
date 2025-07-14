@@ -76,7 +76,7 @@ const Menu = () => {
           </li>
          <li>
             <p
-              className={menuClass}
+              className={menuClass} style={{cursor:"pointer"}}
               onClick={() => window.location.href = import.meta.env.VITE_FRONTEND_URL}
             >
 
