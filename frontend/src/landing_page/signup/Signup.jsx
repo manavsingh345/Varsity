@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 function Signup() {
+    const [loading, setLoading] = useState(false);
+
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -10,32 +12,38 @@ function Signup() {
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
+    
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/signup`, {
 
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form)
-            });
+            const handleSubmit = async (e) => {
+                    e.preventDefault();
+                    setLoading(true); // start loading
 
-            const data = await res.text();
+                    try {
+                        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/signup`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(form),
+                        });
 
-            if (res.status === 201 || res.ok) {
-                alert("Signup complete!");
-                window.location.href = "/login";
-            } else if (res.status === 409) {
-                alert("Account already exists!");
-            } else {
-                alert(data || "Something went wrong.");
-            }
+                        const data = await res.text();
 
-        } catch (err) {
-            alert("Error during signup");
-        }
-    };
+                        if (res.status === 201 || res.ok) {
+                        alert("Signup complete!");
+                        window.location.href = "/login";
+                        } else if (res.status === 409) {
+                        alert("Account already exists!");
+                        } else {
+                        alert(data || "Something went wrong.");
+                        }
+                    } catch (err) {
+                        alert("Error during signup");
+                        console.error(err);
+                    } finally {
+                        setLoading(false); // stop loading
+                }
+            };
+
 
 
     return (
@@ -89,7 +97,14 @@ function Signup() {
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary w-100">Create Account</button>
+                    <button  type="submit"  className="btn btn-primary w-100" disabled={loading}> {loading ? "Creating..." : "Create Account"}
+                     </button>          
+                               
+                                
+                                
+                               
+                                
+
                     <div className="text-center mt-3">
                         <span>Already have an account? </span>
                         <a href="/login" style={{ textDecoration: 'none' }}>Login</a>

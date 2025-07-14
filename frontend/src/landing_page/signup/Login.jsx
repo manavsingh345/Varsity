@@ -6,6 +6,8 @@ function Login() {
     const [form, setForm] = useState({ email: '', password: '' });
     const navigate = useNavigate();
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,7 +16,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError(null);
-
+        setLoading(true);
         try {
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
                 method: 'POST',
@@ -38,7 +40,9 @@ function Login() {
         } catch (err) {
             console.error('Login error:', err);
             setError('Something went wrong. Please try again.');
-        }
+        } finally {
+        setLoading(false); // stop loading
+          }
     };
 
     return (
@@ -80,7 +84,7 @@ function Login() {
                         />
                     </div>
                     {error && <div className="alert alert-danger">{error}</div>}
-                    <button type="submit" className="btn btn-primary w-100">Login</button>
+                    <button type="submit" className="btn btn-primary w-100" disabled={loading}>{loading ? "Login..." : "Login"}</button>
                 </form>
             </div>
         </div>
