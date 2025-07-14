@@ -87,14 +87,9 @@ const Holdings = () => {
   const isProfit = curValue - investment >= 0.0;
   const profClass = isProfit ? "profit" : "loss";
 
-  let netChangePercent = "--";
-  let dayChangePercent = "--";
+    const netChangePercent = stock.net || "--";
+    const dayChangePercent = stock.day || "--";
 
-  
-  if (stock.avg > 0) {
-    netChangePercent = ((stock.price - stock.avg) / stock.avg) * 100;
-    dayChangePercent = netChangePercent; 
-  }
 
   const dayClass =
     typeof dayChangePercent === "number" && dayChangePercent < 0
@@ -116,7 +111,7 @@ const Holdings = () => {
           ? `${netChangePercent.toFixed(2)}%`
           : netChangePercent}
       </td>
-      <td className={dayClass}>
+      <td className={dayClass} style={{fontSize:"14px"}}>
         {typeof dayChangePercent === "number"
           ? `${dayChangePercent.toFixed(2)}%`
           : dayChangePercent}
