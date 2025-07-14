@@ -9,13 +9,13 @@ function Team() {
         className="row p-3 text-muted"
         style={{ lineHeight: "1.8", fontSize: "1.2em" }}
       >
-        <div className="col-6 p-3 text-center">
+        <div className="col-6 p-3 text-center mb-2">
           <img
-            src="media/images/nithinKamath.jpg"
+            src="media/images/mn1.jpg"
             style={{ borderRadius: "100%", width: "50%" }}
           />
-          <h4 className="mt-5">Manav Singh</h4>
-          <h6>Founder, CEO</h6>
+          <h4 className="mt-2">Manav Singh</h4>
+          <h6>Developer</h6>
         </div>
         <div className="col-6 p-3">
           <p>
