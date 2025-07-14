@@ -26,6 +26,9 @@ app.use(express.static(path.join(__dirname)));
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'portfolio.html'));
 // });
+app.get("/", (req, res) => {
+  res.send("Gmail system backend is running!");
+});
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
