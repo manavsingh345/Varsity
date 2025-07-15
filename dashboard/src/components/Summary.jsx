@@ -83,9 +83,12 @@ const Summary = () => {
         <div className="data">
           <div className="first">
             <h3 className={plClass}>
-              {(profitLoss / 1000).toFixed(2)}k{" "}
-              <small>({profitPercent.toFixed(2)}%)</small>
+            {profitLoss >= 1000
+              ? `${(profitLoss / 1000).toFixed(2)}k`
+              : profitLoss.toFixed(2)}{" "}
+            <small>({profitPercent.toFixed(2)}%)</small>
             </h3>
+
             <p>P&L</p>
           </div>
           <hr />
