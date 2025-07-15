@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup() {
     const [loading, setLoading] = useState(false);
@@ -29,15 +31,17 @@ function Signup() {
                         const data = await res.text();
 
                         if (res.status === 201 || res.ok) {
-                        alert("Signup complete!");
-                        window.location.href = "/login";
+                        toast.success("Signup complete!");
+                         setTimeout(() => {
+                            window.location.href = "/login";
+                        }, 2000);
                         } else if (res.status === 409) {
-                        alert("Account already exists!");
+                        toast.error("Account already exists!");
                         } else {
-                        alert(data || "Something went wrong.");
+                        toast.error(data || "Something went wrong.");
                         }
                     } catch (err) {
-                        alert("Error during signup");
+                        toast.error("Signup failed. Try again!");
                         console.error(err);
                     } finally {
                         setLoading(false); // stop loading
@@ -80,7 +84,7 @@ function Signup() {
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            placeholder="name@example.com"
+                            placeholder="yourname@gmail.com"
                             required
                         />
                     </div>
@@ -112,6 +116,7 @@ function Signup() {
 
                 </form>
             </div>
+            <ToastContainer position="top-center" autoClose={3000} />
         </div>
     );
 }

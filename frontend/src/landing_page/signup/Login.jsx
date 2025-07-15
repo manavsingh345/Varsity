@@ -64,7 +64,7 @@ function Login() {
                             className="form-control"
                             id="email"
                             name="email"
-                            placeholder="email@example.com"
+                            placeholder="yourname@gmail.com"
                             value={form.email}
                             onChange={handleChange}
                             required
