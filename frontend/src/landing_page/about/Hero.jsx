@@ -1,3 +1,4 @@
+import "./AboutHero.css";
 function Hero() {
   return (
     <div className="container about-hero">

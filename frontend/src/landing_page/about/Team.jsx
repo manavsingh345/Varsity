@@ -1,3 +1,4 @@
+import "./AboutHero.css";
 function Team() {
   return (
     <div className="container mb-5">
