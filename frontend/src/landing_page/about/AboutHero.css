@@ -1,0 +1,52 @@
+@media (max-width: 768px) {
+  .about-hero-heading {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .about-hero-content {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .about-hero-left,
+  .about-hero-right {
+    padding: 1rem !important;
+    width: 100% !important;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .about-hero-content p {
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .team-row {
+    flex-direction: column;
+  }
+
+  .team-col-img,
+  .team-col-text {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 1rem !important;
+  }
+
+  .team-col-img img {
+    width: 60% !important;
+  }
+
+  .team-col-text {
+    text-align: center;
+    font-size: 1rem !important;
+  }
+
+  .team-col-text p {
+    margin-bottom: 1rem;
+  }
+}

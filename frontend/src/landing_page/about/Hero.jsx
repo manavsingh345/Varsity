@@ -1,9 +1,7 @@
-
-
 function Hero() {
   return (
-    <div className="container">
-      <div className="row p-5 mt-5 mb-5">
+    <div className="container about-hero">
+      <div className="row p-5 mt-5 mb-5 about-hero-heading">
         <h1 className="fs-2 text-center">
           We pioneered the discount broking model in India
           <br />
@@ -12,37 +10,36 @@ function Hero() {
       </div>
 
       <div
-        className="row p-5 mt-5 border-top text-muted"
+        className="row p-5 mt-5 border-top text-muted about-hero-content"
         style={{ lineHeight: "1.8", fontSize: "1.2em" }}
       >
-        <div className="col-6 p-5">
+        <div className="col-6 p-5 about-hero-left">
           <p>
-            We kick-started operations on the 15th of August, 2010 with the goal
+             We kick-started operations on the 15th of August, 2010 with the goal
             of breaking all barriers that traders and investors face in India in
             terms of cost, support, and technology. We named the company
             Zerodha, a combination of Zero and "Rodha", the Sanskrit word for
             barrier.
           </p>
           <p>
-            Today, our disruptive pricing models and in-house technology have
+           Today, our disruptive pricing models and in-house technology have
             made us the biggest stock broker in India.
           </p>
           <p>
-            Over 1+ Crore clients place millions of orders every day through our
+           Over 1+ Crore clients place millions of orders every day through our
             powerful ecosystem of investment platforms, contributing over 15% of
             all Indian retail trading volumes.
           </p>
         </div>
-        <div className="col-6 p-5">
+        <div className="col-6 p-5 about-hero-right">
           <p>
-            In addition, we run a number of popular open online educational and
-            community initiatives to empower retail traders and investors.
+            In addition, we run a number of popular open online educational...
           </p>
           <p>
-            <a href="" style={{ textDecoration: "none" }}>
+            <a href="#" style={{ textDecoration: "none" }}>
               Rainmatter
             </a>
-            , our fintech fund and incubator, has invested in several fintech
+             , our fintech fund and incubator, has invested in several fintech
             startups with the goal of growing the Indian capital markets.
           </p>
           <p>
@@ -55,5 +52,4 @@ function Hero() {
     </div>
   );
 }
-
 export default Hero;
