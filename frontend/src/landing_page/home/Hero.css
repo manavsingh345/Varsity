@@ -1,0 +1,165 @@
+/* Hero.css */
+
+.hero-section {
+  text-align: center;
+}
+
+/* Unified hero image styling */
+.hero-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Typography */
+.hero-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.signup-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .signup-btn {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .hero-img {
+    max-width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+/* Awards section */
+
+.award-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.award-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.award-text {
+  font-size: 1.1rem;
+}
+
+.award-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1rem;
+}
+
+.logos-img {
+  width: 90%;
+  max-width: 100%;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 576px) {
+  .award-heading {
+    font-size: 1.5rem;
+  }
+
+  .award-text,
+  .award-list {
+    font-size: 1rem;
+  }
+
+  .logos-img {
+    width: 100%;
+  }
+}
+.link-stats {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-stats:hover {
+  text-decoration: underline;
+}
+
+/* Optional: reduce spacing on small screens */
+@media (max-width: 576px) {
+  .link-stats {
+    font-size: 1rem;
+  }
+
+  .fs-2 {
+    font-size: 1.5rem;
+  }
+
+  .fs-5 {
+    font-size: 1.1rem;
+  }
+}
+.pricing-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pricing-link:hover {
+  text-decoration: underline;
+}
+
+/* Optional: tweak on small screens */
+@media (max-width: 576px) {
+  .fs-2 {
+    font-size: 1.5rem;
+  }
+
+  .pricing-link {
+    font-size: 1rem;
+  }
+}
+.education-img {
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+}
+
+.edu-link {
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.edu-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .fs-2 {
+    font-size: 1.5rem;
+  }
+
+  .education-img {
+    width: 90%;
+  }
+}
+
+

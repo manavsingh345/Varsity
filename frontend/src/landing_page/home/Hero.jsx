@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
+import './Hero.css';
 function Hero() {
     const navigate = useNavigate();
     const isLoggedIn = !!localStorage.getItem("token");
     return (
         <div className='container p-5 mb-5'>
             <div className='row text-center'>
-                <img src="media/images/homeHero.png" alt="Hero Image" className='mb-5' />
+                <img src="media/images/homeHero.png" alt="Hero Image" className='mb-5 hero-img'/>
                 <h1 className='mt-5'>Invest in everything</h1>
                 <p>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</p>
                 {!isLoggedIn && (
