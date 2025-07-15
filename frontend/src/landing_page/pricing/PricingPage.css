@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+  .brokerage-row {
+    flex-direction: column;
+    text-align: left !important;
+  }
+
+  .brokerage-left,
+  .brokerage-right {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 1rem !important;
+  }
+
+  .brokerage-left ul {
+    padding-left: 1rem;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .brokerage-right h3 {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+  }
+
+  .pricing-card {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 1rem !important;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .pricing-header h3 {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .pricing-card img {
+    max-width: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-card h1 {
+    font-size: 1.4rem;
+  }
+
+  .pricing-card p {
+    font-size: 0.95rem;
+  }
+}
