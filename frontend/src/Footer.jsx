@@ -87,7 +87,7 @@ function Footer() {
             </div>
             <div style={{display:"flex", justifyContent: "center",gap: "25px",marginTop:"10px", fontSize: "10px"}}>
                     <h6 style={{paddingLeft:"15px",fontSize: "13px",color: "#666",paddingTop:"10px" }}>NSE</h6>
-                    <h6 style={{paddingLeft:"25px",fontSize: "15px",color: "#666" ,paddingTop:"10px" }}>BSE</h6>
+                    <h6 style={{paddingLeft:"25px",fontSize: "13px",color: "#666" ,paddingTop:"10px" }}>BSE</h6>
                     <h6 style={{paddingLeft:"25px",fontSize: "13px",color: "#666" ,paddingTop:"10px" }}>Terms & conditions</h6>
                     <h6 style={{paddingLeft:"25px",fontSize: "13px",color: "#666" ,paddingTop:"10px" }}>Policies & procedures</h6>
                     <h6 style={{paddingLeft:"25px",fontSize: "13px",color: "#666" ,paddingTop:"10px" }}>Privacy policy</h6>
